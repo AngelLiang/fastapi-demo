@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "fastapi_depend"
+version = "0.1.0"
+description = ""
+authors = ["AngelLiang <ynanxiu@qq.com>"]
+
+[[tool.poetry.source]]
+name = "aliyun"
+url = "https://mirrors.aliyun.com/pypi/simple/"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+fastapi = "^0.78.0"
+uvicorn = {extras = ["standard"], version = "^0.18.2"}
+sqlalchemy = "^2.0.20"
+alembic = "^1.11.3"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
