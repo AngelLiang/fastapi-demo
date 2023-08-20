@@ -1,4 +1,5 @@
 from typing import Union
+import uvicorn
 
 from fastapi import Depends, FastAPI, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
@@ -90,3 +91,6 @@ async def login(form_data: OAuth2PasswordRequestForm = Depends()):
 @app.get("/users/me")
 async def read_users_me(current_user: User = Depends(get_current_active_user)):
     return current_user
+
+if __name__ == '__main__':
+    uvicorn.run(app, port=8000, host="127.0.0.1")
